@@ -1,0 +1,15 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+.env
+local-env
+#db.sqlite3
+migrations
+
+# Python # 
+*.py[cod] 
+*$py.class 
+*.lock
+myenv
