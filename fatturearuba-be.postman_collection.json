@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "c5e183c4-551c-45bf-a50e-4e9a5dd44d07",
+		"name": "fatturearuba-be",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10831957"
+	},
+	"item": [
+		{
+			"name": "fatture",
+			"item": [
+				{
+					"name": "invoices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/invoices/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"issue_date\": \"2023-09-15\",\n    \"due_date\": \"2023-10-15\",\n    \"emitter_full_name\": \"John Doe\",\n    \"emitter_email\": \"john@example.com\",\n    \"destination_full_name\": \"Alice Smith\",\n    \"destination_email\": \"alice@example.com\",\n    \"total_amount\": 100.50,\n    \"status\": \"Inviata\",\n    \"emitter_user\": 1,\n    \"destination_user\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/invoices/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/invoice_number/{invoice_number}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/invoices/invoice_number/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"invoice_number",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/sdi_identifier/{sdi_identifier}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/invoices/sdi_identifier/testas",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"sdi_identifier",
+								"testas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/invoice_number/{invoice_number}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sdi_identifier\": \"test2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/invoices/invoice_number/2/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"invoice_number",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/xml/invoice_number/{invoice_number}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "xml_file",
+									"type": "file",
+									"src": "/home/robertocaputo/Scaricati/invoice.xml"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/invoices/xml/invoice_number/1/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"xml",
+								"invoice_number",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/xml/invoice_number/{invoice_number}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/invoices/xml/invoice_number/18/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"xml",
+								"invoice_number",
+								"18",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoices/sdi_identifier/status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorization}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/invoices/sdi_identifier/testas/status/",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"invoices",
+								"sdi_identifier",
+								"testas",
+								"status",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.collectionVariables.set(",
+									"    \"Authorization\",",
+									"    data.access_token",
+									");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "app",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "robertocaputo",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/o/token/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"o",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Authorization}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Authorization",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
